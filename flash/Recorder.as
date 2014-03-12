@@ -288,7 +288,7 @@ package
 		
 		protected function triggerEvent(eventName:String, arg0, arg1 = null):void
 		{	
-			ExternalInterface.call("Recorder.triggerEvent", eventName, arg0, arg1);
+			ExternalInterface.call("FlashRecorder.triggerEvent", eventName, arg0, arg1);
 		}
 	}
 }

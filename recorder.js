@@ -104,6 +104,7 @@ var FlashRecorder = {
   bind: function(eventName, fn){
     if(!FlashRecorder._events[eventName]){ FlashRecorder._events[eventName] = [] }
     FlashRecorder._events[eventName].push(fn);
+    alert('pushing callback' + eventName);
   },
   
   triggerEvent: function(eventName, arg0, arg1){
@@ -113,7 +114,8 @@ var FlashRecorder = {
       }
       for(var i = 0, len = FlashRecorder._events[eventName].length; i < len; i++){
         if(FlashRecorder._events[eventName][i]){
-          FlashRecorder._events[eventName][i].apply(FlashRecorder, [arg0, arg1]);
+            alert('calling event: ' + eventName);
+	    FlashRecorder._events[eventName][i].apply(FlashRecorder, [arg0, arg1]);
         }
       }
     });

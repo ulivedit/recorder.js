@@ -113,7 +113,7 @@ var FlashRecorder = {
       }
       for(var i = 0, len = FlashRecorder._events[eventName].length; i < len; i++){
         if(FlashRecorder._events[eventName][i]){
-          FlashRecorder._events[eventName][i].apply(Recorder, [arg0, arg1]);
+          FlashRecorder._events[eventName][i].apply(FlashRecorder, [arg0, arg1]);
         }
       }
     });

@@ -104,7 +104,7 @@ var FlashRecorder = {
   bind: function(eventName, fn){
     if(!FlashRecorder._events[eventName]){ FlashRecorder._events[eventName] = [] }
     FlashRecorder._events[eventName].push(fn);
-    alert('pushing callback' + eventName);
+    alert('binding to callback: ' + eventName);
   },
   
   triggerEvent: function(eventName, arg0, arg1){
@@ -122,7 +122,8 @@ var FlashRecorder = {
   },
 
   triggerCallback: function(name, args){
-    FlashRecorder._executeInWindowContext(function(){
+    alert('triggering callback: ' + name);
+    FlashRecorder._executeInWindowContext(function() {
       FlashRecorder._callbacks[name].apply(null, args);
     });
   },

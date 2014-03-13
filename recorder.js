@@ -70,9 +70,7 @@ var FlashRecorder = {
         options.params = options.params || {};
         this.clearBindings("uploadSuccess");
         this.bind("uploadSuccess", function (responseText) {
-            console.log('calling upload success');
-            console.log(responseText);
-            options.success(FlashRecorder._externalInterfaceDecode(responseText));
+            options.done(FlashRecorder._externalInterfaceDecode(responseText));
         });
         this.flashInterface().upload(options.url, options.audioParam, options.params);
     },

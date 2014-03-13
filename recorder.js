@@ -70,6 +70,8 @@ var FlashRecorder = {
         options.params = options.params || {};
         this.clearBindings("uploadSuccess");
         this.bind("uploadSuccess", function (responseText) {
+            console.log('calling upload success');
+            console.log(responseText);
             options.success(FlashRecorder._externalInterfaceDecode(responseText));
         });
         this.flashInterface().upload(options.url, options.audioParam, options.params);
@@ -208,7 +210,7 @@ var FlashRecorder = {
     },
 
     _externalInterfaceDecode: function (data) {
-        return data.replace(/%22/g, "\"").replace(/%5c/g, "\\").replace(/%26/g, "&").replace(/%25/g, "%");
+        return data;
     }
 };
 

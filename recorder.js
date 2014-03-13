@@ -113,8 +113,10 @@ var FlashRecorder = {
                 return;
             }
             for (var i = 0, len = FlashRecorder._events[eventName].length; i < len; i++) {
-                console.log('triggering event: ' + eventName);
                 if (FlashRecorder._events[eventName][i]) {
+                    console.log('triggering event: ' + eventName);
+                    console.log(FlashRecorder._events[eventName][i]);
+                    console.log([arg0, arg1]);
                     FlashRecorder._events[eventName][i].apply(FlashRecorder, [arg0, arg1]);
                 }
             }

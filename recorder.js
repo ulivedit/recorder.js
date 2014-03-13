@@ -71,7 +71,8 @@ var FlashRecorder = {
     options.params     = options.params || {};
     this.clearBindings("uploadSuccess");
     this.bind("uploadSuccess", function(responseText){
-      options.success(FlashRecorder._externalInterfaceDecode(responseText));
+       alert('upload complete');
+       options.success(FlashRecorder._externalInterfaceDecode(responseText));
     });
     
     this.flashInterface().upload(options.url, options.audioParam, options.params);

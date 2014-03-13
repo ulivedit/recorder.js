@@ -138,7 +138,7 @@ package
 			ml.addEventListener(Event.COMPLETE, onReady);
 			function onReady(e:Event):void
 			{
-				triggerEvent('uploadSuccess', externalInterfaceEncode(e.target.loader.data));
+				triggerEvent('uploadSuccess', e.target.loader.data);
 				logger.log('uploading done');
 			}
 			

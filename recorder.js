@@ -101,7 +101,6 @@ var FlashRecorder = {
 
     bind: function (eventName, fn) {
         if (!FlashRecorder._events[eventName]) {
-            console.log('binding to callback: ' + eventName);
             FlashRecorder._events[eventName] = []
         }
         FlashRecorder._events[eventName].push(fn);
@@ -114,9 +113,6 @@ var FlashRecorder = {
             }
             for (var i = 0, len = FlashRecorder._events[eventName].length; i < len; i++) {
                 if (FlashRecorder._events[eventName][i]) {
-                    console.log('triggering event: ' + eventName);
-                    console.log(FlashRecorder._events[eventName][i]);
-                    console.log([arg0, arg1]);
                     FlashRecorder._events[eventName][i].apply(FlashRecorder, [arg0, arg1]);
                 }
             }
